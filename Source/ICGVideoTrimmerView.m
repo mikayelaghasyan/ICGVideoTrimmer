@@ -72,7 +72,7 @@
 
 - (UIColor *)bgColor
 {
-    return _bgColor ?: [UIColor blackColor];
+    return _bgColor ?: [UIColor clearColor];
 }
 
 - (UIColor *)themeColor
