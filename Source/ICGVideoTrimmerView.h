@@ -18,6 +18,9 @@ NS_ASSUME_NONNULL_BEGIN
 // Video to be trimmed
 @property (strong, nonatomic, nullable) AVAsset *asset;
 
+// Background color for the trimmer view
+@property (strong, nonatomic) UIColor *bgColor;
+
 // Theme color for the trimmer view
 @property (strong, nonatomic) UIColor *themeColor;
 

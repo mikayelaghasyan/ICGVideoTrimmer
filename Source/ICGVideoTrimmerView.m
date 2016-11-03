@@ -70,6 +70,11 @@
 
 #pragma mark - Private methods
 
+- (UIColor *)bgColor
+{
+    return _bgColor ?: [UIColor blackColor];
+}
+
 - (UIColor *)themeColor
 {
     return _themeColor ?: [UIColor lightGrayColor];
@@ -104,7 +109,7 @@
 {
     self.clipsToBounds = YES;
 
-    [self setBackgroundColor:[UIColor blackColor]];
+    [self setBackgroundColor:self.bgColor];
 
     [self.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
     
