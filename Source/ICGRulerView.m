@@ -27,6 +27,8 @@
     if (self) {
         _widthPerSecond = width;
         _themeColor = color;
+        self.backgroundColor = [UIColor clearColor];
+        self.opaque = NO;
     }
     return self;
 }

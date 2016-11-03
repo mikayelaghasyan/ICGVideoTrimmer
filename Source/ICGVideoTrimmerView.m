@@ -132,7 +132,6 @@
     if (self.showsRulerView) {
         CGRect rulerFrame = CGRectMake(0, CGRectGetHeight(self.contentView.frame)*0.7, CGRectGetWidth(self.contentView.frame)+self.thumbWidth, CGRectGetHeight(self.contentView.frame)*0.3);
         ICGRulerView *rulerView = [[ICGRulerView alloc] initWithFrame:rulerFrame widthPerSecond:self.widthPerSecond themeColor:self.themeColor];
-        rulerView.backgroundColor = [UIColor greenColor];
         [self.contentView addSubview:rulerView];
     }
     
