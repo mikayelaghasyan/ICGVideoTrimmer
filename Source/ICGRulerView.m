@@ -36,6 +36,8 @@
 {
     // Drawing code
     CGContextRef context = UIGraphicsGetCurrentContext();
+
+    CGContextClearRect(context, rect);
     
     CGFloat leftMargin = 10;
     CGFloat topMargin = 0;
