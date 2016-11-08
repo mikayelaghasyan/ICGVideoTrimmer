@@ -26,9 +26,6 @@
 @property (strong, nonatomic) UIView *topBorder;
 @property (strong, nonatomic) UIView *bottomBorder;
 
-@property (nonatomic) CGFloat startTime;
-@property (nonatomic) CGFloat endTime;
-
 @property (nonatomic) CGFloat widthPerSecond;
 
 @property (nonatomic) CGPoint leftStartPoint;

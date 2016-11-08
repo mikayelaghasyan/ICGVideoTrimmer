@@ -48,6 +48,9 @@ NS_ASSUME_NONNULL_BEGIN
 // Custom width for thumb
 @property (assign, nonatomic) CGFloat thumbWidth;
 
+@property (nonatomic) CGFloat startTime;
+@property (nonatomic) CGFloat endTime;
+
 @property (weak, nonatomic, nullable) id<ICGVideoTrimmerDelegate> delegate;
 
 - (instancetype)initWithFrame:(CGRect)frame NS_UNAVAILABLE;
