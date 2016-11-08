@@ -9,6 +9,12 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 
+typedef NS_ENUM(NSInteger, ICGVideoTrimmerSide) {
+    ICGVideoTrimmerSideUnknown = 0,
+    ICGVideoTrimmerSideLeft,
+    ICGVideoTrimmerSideRight,
+};
+
 @protocol ICGVideoTrimmerDelegate;
 
 NS_ASSUME_NONNULL_BEGIN
@@ -73,7 +79,7 @@ NS_ASSUME_NONNULL_END
 
 @protocol ICGVideoTrimmerDelegate <NSObject>
 
-- (void)trimmerView:(nonnull ICGVideoTrimmerView *)trimmerView didChangeLeftPosition:(CGFloat)startTime rightPosition:(CGFloat)endTime;
+- (void)trimmerView:(nonnull ICGVideoTrimmerView *)trimmerView didChangeLeftPosition:(CGFloat)startTime rightPosition:(CGFloat)endTime side:(ICGVideoTrimmerSide)side;
 
 @end
 

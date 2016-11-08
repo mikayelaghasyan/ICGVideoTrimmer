@@ -32,6 +32,7 @@
 @property (nonatomic) CGPoint rightStartPoint;
 @property (nonatomic) CGFloat overlayWidth;
 
+@property (nonatomic) ICGVideoTrimmerSide currentTrimmerSide;
 @end
 
 @implementation ICGVideoTrimmerView
@@ -184,6 +185,8 @@
     [self addSubview:self.rightOverlayView];
     
     [self updateBorderFrames];
+
+    self.currentTrimmerSide = ICGVideoTrimmerSideUnknown;
     [self notifyDelegate];
 }
 
@@ -220,6 +223,8 @@
             self.leftOverlayView.center = CGPointMake(newLeftViewMidX, self.leftOverlayView.center.y);
             self.leftStartPoint = point;
             [self updateBorderFrames];
+
+            self.currentTrimmerSide = ICGVideoTrimmerSideLeft;
             [self notifyDelegate];
             
             break;
@@ -258,6 +263,8 @@
             self.rightOverlayView.center = CGPointMake(newRightViewMidX, self.rightOverlayView.center.y);
             self.rightStartPoint = point;
             [self updateBorderFrames];
+
+            self.currentTrimmerSide = ICGVideoTrimmerSideRight;
             [self notifyDelegate];
             
             break;
@@ -291,7 +298,7 @@
     }
     self.startTime = start;
     self.endTime = CGRectGetMinX(self.rightOverlayView.frame) / self.widthPerSecond + (self.scrollView.contentOffset.x - self.thumbWidth) / self.widthPerSecond;
-    [self.delegate trimmerView:self didChangeLeftPosition:self.startTime rightPosition:self.endTime];
+    [self.delegate trimmerView:self didChangeLeftPosition:self.startTime rightPosition:self.endTime side:self.currentTrimmerSide];
 }
 
 - (void)addFrames
@@ -407,6 +414,7 @@
             [scrollView setContentOffset:CGPointZero];
         }];
     }
+    self.currentTrimmerSide = ICGVideoTrimmerSideUnknown;
     [self notifyDelegate];
 }
 
